@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2lu324q86w3r"]
+
+[ext_resource type="TileSet" uid="uid://b1oeow4dllswl" path="res://Tileset.tres" id="1_djfgw"]
+
+[node name="Test" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_djfgw")
+format = 2
+layer_0/name = "Pieces"
+layer_0/z_index = 1
+layer_0/tile_data = PackedInt32Array(196613, 0, 196608, 196612, 0, 196608, 196611, 0, 196608, 196610, 0, 196608, 196609, 0, 196608, 196608, 0, 196608, 262143, 0, 196608, 262140, 0, 196608, 262139, 0, 196608, 262138, 0, 196608, 262137, 0, 196608, 196614, 0, 196608, 196601, 0, 196608, 196602, 0, 196608, 131075, 0, 196608, 131076, 0, 196608, 196605, 0, 196608, 131078, 0, 196608, 131077, 0, 196608, 131074, 0, 196608, 131073, 0, 196608, 131072, 0, 196608, 196606, 0, 196608, 196604, 0, 196608, 196603, 0, 196608, 196607, 0, 196608, 262142, 0, 196608, 262141, 0, 196608, 65536, 0, 131072)
+layer_1/name = "Background"
+layer_1/tile_data = PackedInt32Array()

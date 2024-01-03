@@ -1,13 +1,25 @@
-[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://b1oeow4dllswl"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://b1oeow4dllswl"]
 
 [ext_resource type="PackedScene" uid="uid://cxwfj35h1fc3r" path="res://Scenes/player.tscn" id="1_i5iq7"]
 [ext_resource type="PackedScene" uid="uid://c1mi776k1eeij" path="res://Scenes/box.tscn" id="2_pg3tj"]
+[ext_resource type="Texture2D" uid="uid://bvrfl7m736bqe" path="res://Art/box_metal.png" id="3_ubm2l"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bgr2b"]
+resource_name = "Player"
+scenes/1/scene = ExtResource("1_i5iq7")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_kegva"]
 resource_name = "Pieces"
-scenes/2/scene = ExtResource("1_i5iq7")
-scenes/3/scene = ExtResource("2_pg3tj")
+scenes/2/scene = ExtResource("2_pg3tj")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t87vh"]
+resource_name = "Terrain"
+texture = ExtResource("3_ubm2l")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
 
 [resource]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetScenesCollectionSource_kegva")
+sources/0 = SubResource("TileSetScenesCollectionSource_bgr2b")
+sources/2 = SubResource("TileSetAtlasSource_t87vh")
+sources/1 = SubResource("TileSetScenesCollectionSource_kegva")

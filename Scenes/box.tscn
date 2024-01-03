@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1mi776k1eeij"]
+[gd_scene load_steps=3 format=3 uid="uid://c1mi776k1eeij"]
 
-[ext_resource type="Texture2D" uid="uid://r738o0trdywh" path="res://Art/box.png" id="1_dto52"]
+[ext_resource type="Script" path="res://Scripts/Piece.cs" id="1_j7uiy"]
+[ext_resource type="Texture2D" uid="uid://7xm5a4eeudyu" path="res://Art/box_wood.png" id="1_uk3me"]
 
 [node name="box" type="Node2D"]
+script = ExtResource("1_j7uiy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_dto52")
+texture = ExtResource("1_uk3me")

@@ -204,13 +204,16 @@ script = ExtResource("1_kxlke")
 sprite_frames = SubResource("SpriteFrames_5rar0")
 animation = &"idle"
 frame_progress = 0.302823
+flip_h = true
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_clo5c")
 animation = &"idle"
 frame_progress = 0.284177
+flip_h = true
 
 [node name="HandR" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cut4w")
 animation = &"idle"
 frame_progress = 0.550309
+flip_h = true

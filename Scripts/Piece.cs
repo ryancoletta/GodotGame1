@@ -3,22 +3,44 @@ using System;
 
 public partial class Piece : Node2D
 {
-    protected Vector2I coordinates;
+    protected Tile tile;
 
-    public override void _Ready()
-	{
-        Grid.Register(this);
-	}
+    public Tile Tile { get { return tile; } }
+    public Vector2I Coordinate { get { return tile.coordinate; } }
 
-    public void Initialize(Vector2I coordinates)
+    public void Initialize(Tile tile)
     {
-        this.coordinates = coordinates;
+        this.tile = tile;
+        tile.Occupy(this);
+        GD.Print("Spawned at " + Coordinate);
     }
 
-    public virtual void Move(Vector2I direction)
+    public virtual void MoveTo(Tile destination)
     {
-        coordinates += direction;
-        Position = Grid.CoordinatesToPosition(coordinates);
+        tile.Vacate();
+        tile = destination;
+        tile.Occupy(this);
+        Position = tile.Position;
+
+        GD.Print("Move to " + Coordinate);
+
+        /*        if (true)
+                {
+                    //Position = position;
+                }
+                else
+                {
+                    Tween newTween = CreateTween();
+                    newTween.SetTrans(Tween.TransitionType.Linear);
+                    //newTween.TweenProperty(this, "global_position", position, 0.1f);
+                    newTween.TweenCallback(new Callable(this, "FinishedMovement"));
+                    newTween.Play();
+                }*/
+    }
+
+    public void FinishedMovement() 
+    {
+        GD.Print("I've arrived");
     }
 
     public void Destroy()
